@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+
+
+  db:
+    build:
+      context: ./compose
+      dockerfile: Dockerfile.db
+    ports:
+      - "5437:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=0
+      - POSTGRES_DB=students
+
+
+
+  web:
+    build:
+      context: ./compose
+      dockerfile: Dockerfile.web
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URI: "postgresql://postgres:0@db:5432/students"
+    depends_on:
+      - db
+    command: sh -c "sleep 3 && python app_run.py runserver 0.0.0.0:5000"
+    volumes:
+      - .:/app
