@@ -15,7 +15,7 @@ rest framework.
 ### Instalation
 
     Clone with SSH: git@github.com:ValeriyFromUA/Students_DB_with_Flask_and_postgres_SQL.git
-    Clone with HTTP: https://github.com/ValeriyFromUA/Students_DB_with_Flask_and_postgres_SQL.git
+    Clone with HTTP: https://github.com/ValeriyFromUA/Students_Db.git
 
 Main used libraries in Pipfile nad Pipfile.lock that stored in `compose/` with Dockerfiles
 
