@@ -1,0 +1,24 @@
+/.idea/
+.idea/
+.venv
+/venv/
+flask_app/__pycache__
+/flask_app/__pycache__
+flask_app/models/__pycache__
+/flask_app/models/__pycache__
+tests/__pycache__
+/tests/__pycache__
+.coverage
+/flask_app/static/__pycache__
+flask_app/static/__pycache__
+/ex/
+ex/
+ex
+.db/__pyacache__
+/db/__pyacache__
+db/__pyacache__
+__pycache__/
+<<<<<<< .gitignore
+db/ex.py
+=======
+db/ex.py
