@@ -4,7 +4,7 @@ from db.data_generator import COURSES
 from db.db_engine import get_session
 from db.db_manager import add_courses_to_db
 from db.models import StudentCourse
-from flask_app.controllers import StudentCourseControllers, StudentControllers
+from flask_app.controllers import StudentControllers, StudentCourseControllers
 
 session = get_session()
 

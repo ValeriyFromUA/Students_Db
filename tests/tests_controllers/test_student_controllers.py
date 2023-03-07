@@ -4,7 +4,7 @@ from db.db_engine import get_session
 from db.db_manager import add_groups_to_db
 from db.models import Student
 from flask_app.controllers import StudentControllers
-from tests.tests_controllers.conftest import STUDENT_3, STUDENTS, STUDENT
+from tests.tests_controllers.conftest import STUDENT, STUDENT_3, STUDENTS
 
 
 @pytest.fixture

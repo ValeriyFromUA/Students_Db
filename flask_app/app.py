@@ -2,8 +2,8 @@ from flasgger import Swagger
 from flask import Flask
 from flask_restful import Api
 
-from flask_app.configuration import ROUTE
 from flask_app.api import Courses, Groups, Student, Students, StudentsOnCourse
+from flask_app.configuration import ROUTE
 
 
 def create_app(config):

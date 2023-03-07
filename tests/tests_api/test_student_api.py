@@ -23,7 +23,7 @@ def test_get_student_bad(test_client, mocker):
     response = test_client.get(f"{ROUTE}/students/123/")
     student = response.get_json()
     assert response.status_code == HTTPStatus.NOT_FOUND
-    assert student == {"error": f"Student with id 123 not exist"}
+    assert student == {"error": "Student with id 123 not exist"}
     mocked_validator.assert_called_once()
 
 
@@ -44,5 +44,5 @@ def test_delete_student_bad(test_client, mocker):
     )
     response = test_client.delete(f"{ROUTE}/students/14/")
     assert response.status_code == HTTPStatus.NOT_FOUND
-    assert response.get_json() == {"error": f"Student #14 not deleted"}
+    assert response.get_json() == {"error": "Student #14 not deleted"}
     mocked_delete.assert_called_once()

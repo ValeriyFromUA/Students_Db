@@ -4,20 +4,13 @@ import pytest
 
 from db.data_generator import COURSES, Generator
 from db.db_engine import get_session
-from db.db_manager import (
-    add_courses_to_db,
-    add_groups_to_db,
-    add_students_to_db,
-    add_all_students_to_courses,
-    add_generated_data_to_db,
-)
-from db.models import StudentCourse, Group, Course, Student
-from flask_app.controllers import (
-    CourseControllers,
-    GroupControllers,
-    StudentControllers,
-    StudentCourseControllers,
-)
+from db.db_manager import (add_all_students_to_courses, add_courses_to_db,
+                           add_generated_data_to_db, add_groups_to_db,
+                           add_students_to_db)
+from db.models import Course, Group, Student, StudentCourse
+from flask_app.controllers import (CourseControllers, GroupControllers,
+                                   StudentControllers,
+                                   StudentCourseControllers)
 from tests.conftest import refresh_db
 
 instance = Generator()
@@ -104,7 +97,7 @@ def test_add_all_students_to_courses(clear_data_in_db, create_courses_and_studen
     return_value=[{"student_id": 1, "course_id": 1}],
 )
 def test_add_generated_data_to_db(
-    mock_group, mock_students, mock_courses, mock_student_course, clear_data_in_db
+        mock_group, mock_students, mock_courses, mock_student_course, clear_data_in_db
 ):
     add_generated_data_to_db()
     result = StudentControllers().get_all_students()

@@ -16,7 +16,7 @@ def add_courses_to_db(courses: List) -> NoReturn:
         course = Course(course=element, description=f"description of {element}")
         session.add(course)
     session.commit()
-    logger.info(f"Courses added to db")
+    logger.info("Courses added to db")
 
 
 def add_groups_to_db(groups: List) -> NoReturn:
@@ -24,7 +24,7 @@ def add_groups_to_db(groups: List) -> NoReturn:
         group = Group(group_name=f"{group}")
         session.add(group)
         session.commit()
-    logger.info(f"Groups added to db")
+    logger.info("Groups added to db")
 
 
 def add_students_to_db(students: List, id_list: List) -> NoReturn:
@@ -38,7 +38,7 @@ def add_students_to_db(students: List, id_list: List) -> NoReturn:
         students_list.append(student)
     session.add_all(students_list)
     session.commit()
-    logger.info(f"Students added to db")
+    logger.info("Students added to db")
 
 
 def add_all_students_to_courses(student_course_list: List) -> NoReturn:
@@ -61,7 +61,7 @@ def add_all_students_to_courses(student_course_list: List) -> NoReturn:
             data_to_db_list.append(subtable)
     session.add_all(data_to_db_list)
     session.commit()
-    logger.info(f"Students added to courses")
+    logger.info("Students added to courses")
 
 
 def add_generated_data_to_db() -> NoReturn:
@@ -77,4 +77,4 @@ def add_generated_data_to_db() -> NoReturn:
     add_students_to_db(students, id_list)
     add_courses_to_db(COURSES)
     add_all_students_to_courses(student_course_list)
-    logger.info(f"All data added to db")
+    logger.info("All data added to db")

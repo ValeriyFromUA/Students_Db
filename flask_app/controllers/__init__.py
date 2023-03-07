@@ -1,5 +1,5 @@
 from .base_controllers import Base
-from .student_controllers import StudentControllers
-from .group_controllers import GroupControllers
 from .course_controllers import CourseControllers
+from .group_controllers import GroupControllers
+from .student_controllers import StudentControllers
 from .student_course_controllers import StudentCourseControllers

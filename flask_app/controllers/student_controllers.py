@@ -1,8 +1,8 @@
-from typing import List, Dict, Optional
+from typing import Dict, List, Optional
 
 from db.models import Student
 from flask_app.controllers import Base
-from flask_app.validators import student_validator, group_validator
+from flask_app.validators import group_validator, student_validator
 
 
 class StudentControllers(Base):

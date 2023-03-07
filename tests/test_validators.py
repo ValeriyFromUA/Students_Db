@@ -3,12 +3,9 @@ import pytest
 from db.db_engine import get_session
 from db.models import Student, StudentCourse
 from flask_app.controllers import StudentControllers
-from flask_app.validators import (
-    group_validator,
-    student_validator,
-    validate_student_data,
-    validate_student_on_course,
-)
+from flask_app.validators import (group_validator, student_validator,
+                                  validate_student_data,
+                                  validate_student_on_course)
 
 STUDENT = Student(id=999, first_name="James", last_name="May")
 

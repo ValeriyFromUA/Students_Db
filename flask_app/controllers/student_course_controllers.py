@@ -1,6 +1,6 @@
-from typing import List, Dict, Optional, NoReturn
+from typing import Dict, List, NoReturn, Optional
 
-from db.models import StudentCourse, Student, Course
+from db.models import Course, Student, StudentCourse
 from flask_app.controllers import Base
 from flask_app.validators import validate_student_on_course
 

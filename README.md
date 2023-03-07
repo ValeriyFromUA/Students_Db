@@ -12,9 +12,11 @@
 This is an application that inserts/select/updates/deletes data in the database (PostgreSQL) using sqlalchemy and flask
 rest framework.
 ***
+
 ### Instalation
 
     Clone with SSH: git@github.com:ValeriyFromUA/Students_Db.git
+
     Clone with HTTP: https://github.com/ValeriyFromUA/Students_Db.git
 
 Main used libraries in Pipfile nad Pipfile.lock that stored in `compose/` with Dockerfiles
@@ -22,6 +24,16 @@ Main used libraries in Pipfile nad Pipfile.lock that stored in `compose/` with D
 ***
 
 ### Usage
+
+Create .env file with your environment variables like in .env_example:
+```
+PGUSER=postgres
+POSTGRES_PASSWORD=0
+POSTGRES_DB=students
+TEST_POSTGRES_DB=students_test
+DATABASE_URL=postgresql://postgres:0@localhost:5432/students
+FLASK_ENV: Config 
+```
 
 Chose config in ```configuration.py``` and add it in ```app_run.py```
 

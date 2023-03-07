@@ -1,4 +1,5 @@
 from typing import Dict, List
+
 from flask_app.api import Base
 from flask_app.controllers import StudentCourseControllers
 
@@ -14,7 +15,8 @@ class StudentsOnCourse(Base):
                 type: string
                 required: True
                 enum: ['Biochemistry', 'Chinese', 'Computer Science',
-                 'Digital Humanities', 'Economics', 'French', 'Geography', 'History', 'Integrative Physiology', 'Journalism']
+                 'Digital Humanities', 'Economics', 'French', 'Geography', 'History',
+                  'Integrative Physiology', 'Journalism']
             responses:
               200:
                 description: list of courses
