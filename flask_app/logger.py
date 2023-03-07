@@ -1,6 +1,6 @@
 import logging
 
-_log_format = f"%(asctime)s - [%(levelname)s] - %(filename)s --> def %(funcName)s --> line: #%(lineno)d - %(message)s"
+_log_format = "%(asctime)s - [%(levelname)s] - %(filename)s --> def %(funcName)s --> line: #%(lineno)d - %(message)s"
 
 
 def get_stream_handler():

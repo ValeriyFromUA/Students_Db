@@ -4,10 +4,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
 from sqlalchemy_utils import create_database, database_exists
 
-from flask_app.configuration import DevelopmentConfig
+from flask_app.configuration import Config
 
 
-def get_engine(url: str = DevelopmentConfig.DEV_DATABASE_URI) -> Engine:
+def get_engine(url: str = Config.DATABASE_URI) -> Engine:
     if not database_exists(url):
         create_database(url)
     engine = create_engine(url)

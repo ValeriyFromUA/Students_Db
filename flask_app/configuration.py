@@ -9,12 +9,8 @@ class Config:
     PORT = 5000
     DEBUG = False
     TESTING = False
-
-
-class DevelopmentConfig(Config):
-    DEBUG = True
-    DEV_DATABASE_URI = env.get(
-        "DEV_DATABASE_URI", default="postgresql://postgres:0@db:5432/students"
+    DATABASE_URI = env.get(
+        "DATABASE_URI", default="postgresql://postgres:0@db:5432/students"
     )
 
 
@@ -23,12 +19,4 @@ class TestingConfig(Config):
     DEBUG = True
     TEST_DATABASE_URI = env.get(
         "TEST_DATABASE_URI", default="postgresql://postgres:0@db:5432/students_test"
-    )
-
-
-class ProductionConfig(Config):
-    TESTING = False
-    DEBUG = False
-    DATABASE_URI = env.get(
-        "DATABASE_URI", default="postgresql://postgres:0@db:5432/students_xxx"
     )

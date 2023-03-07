@@ -1,7 +1,7 @@
 from collections import Counter
-from typing import List, Dict
+from typing import Dict, List
 
-from db.models import Student, Group
+from db.models import Group, Student
 from flask_app.controllers import Base
 
 

@@ -1,7 +1,7 @@
 from http import HTTPStatus
 
 from flask_app import ROUTE
-from tests.tests_api.conftest import STUDENTS, NEW_STUDENT
+from tests.tests_api.conftest import NEW_STUDENT, STUDENTS
 
 
 def test_get_students(test_client, mocker):

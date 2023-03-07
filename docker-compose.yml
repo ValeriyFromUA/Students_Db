@@ -1,31 +1,41 @@
 version: "3.9"
-
 services:
-
-
   db:
     build:
-      context: ./compose
-      dockerfile: Dockerfile.db
+      context: .
+      dockerfile: ./compose/db/Dockerfile
     ports:
       - "5437:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=0
-      - POSTGRES_DB=students
-
-
-
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-d", "students" ]
+      interval: 5s
+      timeout: 1s
+      retries: 5
+      start_period: 3s
+  test-db:
+    build:
+      context: .
+      dockerfile: ./compose/db/Dockerfile
+    ports:
+      - "5438:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-d", "${TEST_POSTGRES_DB}" ]
+      interval: 5s
+      timeout: 1s
+      retries: 5
+      start_period: 3s
   web:
     build:
-      context: ./compose
-      dockerfile: Dockerfile.web
+      context: .
+      dockerfile: ./compose/web/Dockerfile
     ports:
       - "5000:5000"
-    environment:
-      DATABASE_URI: "postgresql://postgres:0@db:5432/students"
+    env_file:
+      - .env
     depends_on:
-      - db
-    command: sh -c "sleep 3 && python app_run.py runserver 0.0.0.0:5000"
+      db:
+        condition: service_healthy
     volumes:
       - .:/app

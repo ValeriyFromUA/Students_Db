@@ -1,7 +1,7 @@
 import pytest
 
 from db.db_engine import get_engine, get_session
-from db.models import Base, Student, Course, Group, StudentCourse
+from db.models import Base, Course, Group, Student, StudentCourse
 from flask_app import get_logger
 
 logger = get_logger(__name__)

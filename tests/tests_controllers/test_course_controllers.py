@@ -2,9 +2,7 @@ import pytest
 
 from db.data_generator import COURSES
 from db.db_manager import add_courses_to_db
-from flask_app.controllers import (
-    CourseControllers,
-)
+from flask_app.controllers import CourseControllers
 
 
 @pytest.fixture
