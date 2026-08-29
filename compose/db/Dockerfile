@@ -1,3 +1,3 @@
-FROM postgres:15.0-alpine
+FROM postgres:18.6-alpine
 
 CMD ["postgres"]
